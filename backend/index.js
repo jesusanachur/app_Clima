@@ -1,21 +1,35 @@
-// index.js
-console.log("Servidor de clima iniciado...");
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 
-// Aquí va tu código principal
-const mysql = require('mysql');
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Ejemplo de conexión (configura con tus datos)
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'tu_usuario',
-  password: 'tu_contraseña',
-  database: 'clima_db'
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// Ruta básica
+app.get('/', (req, res) => {
+  res.json({ 
+    message: '¡Servidor de Clima funcionando! 🎉',
+    status: 'success',
+    timestamp: new Date().toISOString()
+  });
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.log('Error conectando a la BD:', err);
-    return;
-  }
-  console.log('Conectado a la base de datos MySQL');
+// Ruta de ejemplo para clima
+app.get('/clima', (req, res) => {
+  res.json({
+    ciudad: 'Ejemplo',
+    temperatura: '25°C',
+    descripcion: 'Soleado',
+    humedad: '65%'
+  });
+});
+
+// Iniciar servidor
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor ejecutándose en: http://localhost:${PORT}`);
 });

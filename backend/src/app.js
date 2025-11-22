@@ -1,7 +1,9 @@
 import express from "express";
 import cors from "cors";
 import climaRoutes from "./routes/clima.routes.js";
-import { notFoundHandler, errorHandler } from "./middleware/error.middleware.js";
+//import { notFoundHandler, errorHandler } from "./middleware/error.middleware.js";
+import errorHandler from './middleware/error.middleware.js';
+
 
 const app = express();
 
