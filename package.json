@@ -1,0 +1,21 @@
+{
+  "name": "clima",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusanachur/app_Clima.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jesusanachur/app_Clima/issues"
+  },
+  "homepage": "https://github.com/jesusanachur/app_Clima#readme"
+}

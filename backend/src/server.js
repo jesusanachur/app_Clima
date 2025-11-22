@@ -1,18 +1,10 @@
-import axios from "axios";
 
-export const obtenerClimaPorCiudad = async (ciudad) => {
-  const apiKey = process.env.OPENWEATHER_KEY; // http://localhost:3000/api/clima?city=Bogota;
+import 'dotenv/config';
+import app from './src/app.js';
 
-  const url = `http://localhost:3000/api/clima?city=${ciudad}`;
+const port = process.env.PORT || 4000;
 
-  const { data } = await axios.get(url);
-
-  return {
-    ciudad: data.name,
-    pais: data.sys.country,
-    temperatura: data.main.temp,
-    descripcion: data.weather[0].description,
-    humedad: data.main.humidity,
-    viento: data.wind.speed,
-  };
-};
+app.listen(port, '0.0.0.0', () => {
+  console.log(` [clima-api] Servidor ejecutándose en http://localhost:${port}`);
+  console.log(` Health check disponible en: http://localhost:${port}/health`);
+});
