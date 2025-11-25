@@ -1,10 +1,11 @@
+import fs from 'fs';
+import path from 'path';
 
-import 'dotenv/config';
-import app from './app.js';
+// Leer el archivo JSON
+const ciudadesPath = path.join(process.cwd(), 'data', 'ciudades.json');
+const ciudadesData = JSON.parse(fs.readFileSync(ciudadesPath, 'utf8'));
 
-const port = process.env.PORT || 4000;
-
-app.listen(port, '0.0.0.0', () => {
-  console.log(` [clima-api] Servidor ejecutándose en http://localhost:${port}`);
-  console.log(` Health check disponible en: http://localhost:${port}/health`);
+// Ruta para obtener las ciudades
+app.get('/ciudades', (req, res) => {
+  res.json(ciudadesData);
 });

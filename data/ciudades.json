@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "ciudad": "Madrid",
+    "temperatura": 18,
+    "descripcion": "Soleado"
+  },
+  {
+    "id": 2,
+    "ciudad": "Barcelona",
+    "temperatura": 20,
+    "descripcion": "Nublado"
+  },
+  {
+    "id": 3,
+    "ciudad": "Sevilla",
+    "temperatura": 25,
+    "descripcion": "Caluroso"
+  }
+]
