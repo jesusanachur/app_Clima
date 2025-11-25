@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App del Clima 🌤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ App del Clima</h1>
+            <p>Consulta el clima en tiempo real</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="ciudadInput" placeholder="Ej: Madrid, Barcelona, París..." onkeypress="handleEnter(event)">
+                <button onclick="buscarClimaReal()">🔍 Buscar Clima Real</button>
+            </div>
+            <div class="loading hidden" id="loading">Buscando datos del clima...</div>
+        </div>
+
+        <div id="resultado" class="weather-card hidden">
+            <div class="weather-header">
+                <h2 id="ciudadNombre"></h2>
+                <div class="temp" id="temperatura"></div>
+                <div class="desc" id="descripcion"></div>
+            </div>
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span>💧 Humedad</span>
+                    <span id="humedad">--</span>
+                </div>
+                <div class="detail-item">
+                    <span>💨 Viento</span>
+                    <span id="viento">--</span>
+                </div>
+                <div class="detail-item">
+                    <span>🇵🇷 País</span>
+                    <span id="pais">--</span>
+                </div>
+                <div class="detail-item">
+                    <span>🔥 Sensación</span>
+                    <span id="sensacion">--</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-card hidden" id="errorCard">
+            <h3>❌ Error</h3>
+            <p id="errorMessage"></p>
+        </div>
+
+        <div class="ciudades-section">
+            <h3>📍 Ciudades Disponibles (Datos Locales)</h3>
+            <div id="listaCiudades" class="ciudades-grid"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
